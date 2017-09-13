@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bruxelles86/MM-test/issues"
   },
-  "homepage": "https://github.com/bruxelles86/MM-test#readme"
+  "homepage": "https://github.com/bruxelles86/MM-test#readme",
+  "dependencies": {
+    "jasmine": "^2.8.0"
+  }
 }
