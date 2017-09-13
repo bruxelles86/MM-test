@@ -6,23 +6,23 @@ function SentimentAnalyser() {
 SentimentAnalyser.prototype.analyse = function(story) {
   var alphaNumericOnly = story.toLowerCase().replace(/[^\w\s]/gi, '')
   var words = alphaNumericOnly.split(" ")
-  return this.finalResult(this.generateScore(words))
+  return this._finalResult(this._generateScore(words))
 }
 
-SentimentAnalyser.prototype.generateScore = function(words) {
-  var positiveMatches = this.countMatches(words, this.positiveWords)
-  var negativeMatches = this.countMatches(words, this.negativeWords)
+SentimentAnalyser.prototype._generateScore = function(words) {
+  var positiveMatches = this._countMatches(words, this.positiveWords)
+  var negativeMatches = this._countMatches(words, this.negativeWords)
 
   return positiveMatches.length - negativeMatches.length
 }
 
-SentimentAnalyser.prototype.countMatches = function(words, list) {
+SentimentAnalyser.prototype._countMatches = function(words, list) {
   return words.filter(function(word) {
     return list.includes(word)
   })
 }
 
-SentimentAnalyser.prototype.finalResult = function(score) {
+SentimentAnalyser.prototype._finalResult = function(score) {
   if(score >= 2) {
     return'positive'
   } else if (score >= 0 && score < 2) {
