@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/bruxelles86/MM-test#readme",
   "dependencies": {
-    "jasmine": "^2.8.0"
+    "jasmine": "^2.8.0",
   }
 }

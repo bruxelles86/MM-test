@@ -2,6 +2,7 @@ const SentimentAnalyser = require('../SentimentAnalyser.js')
 
 describe('SentimentAnalyser', function() {
   var sentimentAnalyser
+  
   beforeEach(function() {
     sentimentAnalyser = new SentimentAnalyser()
   });
