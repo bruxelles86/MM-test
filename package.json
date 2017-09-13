@@ -18,5 +18,6 @@
   "homepage": "https://github.com/bruxelles86/MM-test#readme",
   "dependencies": {
     "jasmine": "^2.8.0",
+    "mongodb": "^2.2.31"
   }
 }
