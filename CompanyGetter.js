@@ -5,7 +5,7 @@ function CompanyGetter() {
 }
 
 CompanyGetter.prototype.getCompany = function(ticker) {
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
     options = {
       'host': 'mm-recruitment-stock-price-api.herokuapp.com',
       'path': `/company/${ticker}`,
@@ -13,14 +13,14 @@ CompanyGetter.prototype.getCompany = function(ticker) {
     };
     var json = ''
 
-    http.get(options, function(resp) {
-      resp.on('data', function(chunk) {
+    http.get(options, resp => {
+      resp.on('data', chunk => {
         json += chunk;
       });
-      resp.on('end', function() {
+      resp.on('end', () => {
         resolve(JSON.parse(json));
       });
-    }).on("error", function(err) {
+    }).on("error", err => {
         reject(`Got error: ${err.message}`);
     });
   });

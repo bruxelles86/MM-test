@@ -17,7 +17,7 @@ SentimentAnalyser.prototype._generateScore = function(words) {
 }
 
 SentimentAnalyser.prototype._countMatches = function(words, list) {
-  return words.filter(function(word) {
+  return words.filter(word => {
     return list.includes(word)
   })
 }

@@ -8,11 +8,11 @@ TickerGetter.prototype.getTicker = function(inputName) {
   var uri = this.uri
   _this = this
 
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
     _this._dbConnect(uri)
     .then(db => _this._extractTicker(db, inputName))
     .catch((err) => reject(err))
-    .then(function(tickerCode) {
+    .then(tickerCode => {
       resolve(tickerCode)
     })
     .catch((err) => reject(err))
@@ -20,7 +20,7 @@ TickerGetter.prototype.getTicker = function(inputName) {
 }
 
 TickerGetter.prototype._dbConnect = function(uri) {
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
     MongoClient.connect(uri, (err, db) => {
       if (err) {
         reject(err);
@@ -32,12 +32,12 @@ TickerGetter.prototype._dbConnect = function(uri) {
 }
 
 TickerGetter.prototype._extractTicker = function(db, inputName) {
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
     db.collection('company').find().toArray((err, companies) => {
       if (err) {
         reject(err)
       } else {
-        company = companies.find(function(company) {
+        company = companies.find(company => {
           return company.name.toLowerCase().includes(inputName.toLowerCase())
         })
         resolve(company.tickerCode)
