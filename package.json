@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/bruxelles86/MM-test#readme",
   "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.15.4",
     "jasmine": "^2.8.0",
-    "mongodb": "^2.2.31"
+    "mocha": "^3.5.3",
+    "mongodb": "^2.2.31",
+    "zombie": "^5.0.7"
   }
 }
