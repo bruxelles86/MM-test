@@ -24,4 +24,13 @@ var assert = require("chai").assert,
           done();
         });
       })
+
+      it("shows the company name on next screen after a search", function(done) {
+        browser.visit(uri, function() {
+          browser.fill('content', 'Google Inc');
+          browser.pressButton('Search').then(function() {
+          browser.assert.text('#ticker_price', 'GOOG 54407')
+        }).then(done, done);
+        });
+      })
     })
