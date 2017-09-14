@@ -12,23 +12,23 @@ var assert = require("chai").assert,
       });
 
       it("shows the right title", done => {
-        browser.visit(uri, function() {
+        browser.visit(uri, () => {
           browser.assert.text('title', 'Will Gant tech test')
           done();
         });
       });
 
-      it("shows a form to enter company name", function(done) {
-        browser.visit(uri, function() {
+      it("shows a form to enter company name", done => {
+        browser.visit(uri, () => {
           browser.assert.element('[id="company_input"]')
           done();
         });
       })
 
-      it("shows the company name on next screen after a search", function(done) {
-        browser.visit(uri, function() {
+      it("shows the company name on next screen after a search", done => {
+        browser.visit(uri, () => {
           browser.fill('content', 'Google Inc');
-          browser.pressButton('Search').then(function() {
+          browser.pressButton('Search').then(() => {
           browser.assert.text('#ticker_price', 'GOOG 54407')
         }).then(done, done);
         });
