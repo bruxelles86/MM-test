@@ -11,10 +11,17 @@ var assert = require("chai").assert,
       browser = new Browser();
       });
 
-      it("should show the right title", done => {
+      it("shows the right title", done => {
         browser.visit(uri, function() {
           browser.assert.text('title', 'Will Gant tech test')
           done();
         });
       });
+
+      it("shows a form to enter company name", function(done) {
+        browser.visit(uri, function() {
+          browser.assert.element('[id="company_input"]')
+          done();
+        });
+      })
     })
