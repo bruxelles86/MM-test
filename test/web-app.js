@@ -30,16 +30,20 @@ var assert = require("chai").assert,
           browser.fill('content', 'google');
           browser.pressButton('Search').then(() => {
           browser.assert.text('#ticker_price', 'GOOG 54407')
-        }).then(done, done);
+        })
+        .catch((err) => console.log(err))
+        .then(done, done);
         });
       }, 2500)
 
-      it("displays a card for company info after a search", function(done) {
-        browser.visit(uri, function() {
+      it("displays a card for company info after a search", done => {
+        browser.visit(uri, () => {
           browser.fill('content', 'google');
-          browser.pressButton('Search').then(function() {
+          browser.pressButton('Search').then(() => {
           browser.assert.element('[id="card"]')
-        }).then(done, done);
+        })
+        .catch((err) => console.log(err))
+        .then(done, done);
         });
-      })
+      }, 2500)
     })
