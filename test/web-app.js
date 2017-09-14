@@ -60,4 +60,15 @@ var assert = require("chai").assert,
         .then(done, done);
         });
       }, 2500)
+
+      it("shows the company name in a separate bar at the top of the card", done => {
+        browser.visit(uri, () => {
+          browser.fill('content', 'google');
+          browser.pressButton('Search').then(() => {
+          browser.assert.text('#company_name', 'Google Inc')
+        })
+        .catch((err) => console.log(err))
+        .then(done, done);
+        });
+      }, 2500)
     })

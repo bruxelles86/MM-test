@@ -11,17 +11,17 @@
     <input type="submit" value="Search">
   </form>
 
-<% if(typeof data != 'undefined') { %>
-  <% data = JSON.parse(data) %>
+  <% if(typeof data != 'undefined') { %>
+    <% data = JSON.parse(data) %>
 
-<div class="w3-card-4" id="card">
-  <p id="ticker_price"><%= data.tickerCode + ' ' + data.latestPrice %>  </p>
-  <% for(i = 0; i != 2; i++) { %>
-  <p id=<%="story" + (i+1) %> > <%= data.news[i].body %></p>
-  <% } %>
-</div>
+    <div class="w3-card-4" id="card">
+      <p id="ticker_price"><%= data.tickerCode + ' ' + data.latestPrice %>  </p>
+      <% for(i = 0; i != 2; i++) { %>
+        <p id=<%="story" + (i+1) %> > <%= data.news[i].body %></p>
+        <% } %>
+      </div>
 
-<% } %>
+      <% } %>
 
-</body>
-</html>
+    </body>
+    </html>
