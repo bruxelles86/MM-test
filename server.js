@@ -22,12 +22,12 @@ app.get('/', (req, res) => {
 app.post('/company', (req,res) => {
   var company = req.body.content;
   var res = res
-  
+
   tickerGetter.getTicker(company
   ).then(ticker => companyGetter.getCompany(ticker)
   ).catch((err) => console.log(err))
   .then(company => {
-    res.send(`<p id='ticker_price'> ${company.ticker} ${company.latestPrice} </p>`)
+    res.render('index.ejs', { data: JSON.stringify(company) })
   })
   .catch((err) => console.log(err));
 });

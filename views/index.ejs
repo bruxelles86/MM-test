@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <html>
 <head>
   <title>Will Gant tech test</title>
@@ -8,5 +10,16 @@
     <input type="text" name="content" />
     <input type="submit" value="Search">
   </form>
+
+<% if(typeof data != 'undefined') { %>
+  <% data = JSON.parse(data) %>
+
+<div class="w3-card-4" id="card">
+  <p id="ticker_price"><%= data.ticker + ' ' + data.latestPrice %>  </p>
+
+</div>
+
+<% } %>
+
 </body>
 </html>
