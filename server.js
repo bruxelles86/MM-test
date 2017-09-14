@@ -26,7 +26,7 @@ app.post('/company', (req,res) => {
   var res = res
 
   tickerGetter.getTicker(company
-  ).then(ticker => companyGetter.getCompany(ticker)
+  ).then(companyData => companyGetter.getCompany(companyData)
   ).catch((err) => console.log(err))
   .then(companyData => newsGetter.getNews(companyData)
   ).catch((err) => console.log(err))
