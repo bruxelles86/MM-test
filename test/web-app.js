@@ -71,4 +71,16 @@ var assert = require("chai").assert,
         .then(done, done);
         });
       }, 2500)
+
+      it("displays smileys corresponding to sentiment of each article", done => {
+        browser.visit(uri, () => {
+          browser.fill('content', 'google');
+          browser.pressButton('Search').then(() => {
+          browser.assert.element('[class="neutral_smiley"]')
+          browser.assert.element('[class="sad_smiley"]')
+        })
+        .catch((err) => console.log(err))
+        .then(done, done);
+        });
+      }, 2500)
     })
