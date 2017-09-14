@@ -13,7 +13,7 @@ describe('TickerGetter', function() {
       done()
     })
     .catch((err) => console.log(err))
-  }, 5000);
+  }, 2500);
 
   it('returns MSFT when passed \'Microsoft Inc\'', function(done) {
     tickerGetter.getTicker('Microsoft Inc').then(function(ticker) {
@@ -21,7 +21,7 @@ describe('TickerGetter', function() {
       done()
     })
     .catch((err) => console.log(err))
-  }, 5000);
+  }, 2500);
 
   it('also returns correct tickers when passed a partial name', function(done) {
     tickerGetter.getTicker('google').then(function(ticker) {
@@ -29,5 +29,5 @@ describe('TickerGetter', function() {
       done()
     })
     .catch((err) => console.log(err))
-  })
+  }, 2500)
 })
