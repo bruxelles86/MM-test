@@ -31,7 +31,6 @@ app.post('/company', (req,res) => {
   .then(companyData => newsGetter.getNews(companyData)
   ).catch((err) => console.log(err))
   .then(companyData => {
-    companyData["name"] = req.body.content
     res.render('index.ejs', { data: JSON.stringify(companyData) })
   })
   .catch((err) => console.log(err))

@@ -40,7 +40,7 @@ TickerGetter.prototype._extractTicker = function(db, inputName) {
         company = companies.find(company => {
           return company.name.toLowerCase().includes(inputName.toLowerCase())
         })
-        resolve(company.tickerCode)
+        resolve(company)
         db.close()
       }
     })

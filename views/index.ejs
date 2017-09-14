@@ -13,8 +13,11 @@
 
   <% if(typeof data != 'undefined') { %>
     <% data = JSON.parse(data) %>
-
     <div class="w3-card-4" id="card">
+      <header class="w3-container w3-blue">
+      <h1 id="company_name"><%= data.name %></h1>
+      </header>
+
       <p id="ticker_price"><%= data.tickerCode + ' ' + data.latestPrice %>  </p>
       <% for(i = 0; i != 2; i++) { %>
         <p id=<%="story" + (i+1) %> > <%= data.news[i].body %></p>
