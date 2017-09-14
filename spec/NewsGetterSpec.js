@@ -16,6 +16,7 @@ describe('NewsGetter', () => {
       expect(response[0].body.includes(story1)).toBe(true)
       done()
     })
+    .catch((err) => console.log(err))
   }, 2500);
 
   it('gets story data for Microsoft', done => {
@@ -27,5 +28,6 @@ describe('NewsGetter', () => {
       expect(response[0].body.includes(story1)).toBe(true)
       done()
     })
+    .catch((err) => console.log(err))
   }, 2500);
 });
