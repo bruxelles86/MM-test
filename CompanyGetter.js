@@ -18,9 +18,7 @@ CompanyGetter.prototype.getCompany = function(ticker) {
         json += chunk;
       });
       resp.on('end', () => {
-        json = JSON.parse(json)
-        json["ticker"] = ticker
-        resolve(json);
+        resolve(JSON.parse(json));
       });
     }).on("error", err => {
         reject(`Got error: ${err.message}`);

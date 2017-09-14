@@ -3,9 +3,11 @@ const app = express();
 const bodyParser = require('body-parser')
 const TickerGetter = require('./TickerGetter')
 const CompanyGetter = require('./CompanyGetter')
+const NewsGetter = require('./NewsGetter')
 
 var tickerGetter = new TickerGetter()
 var companyGetter = new CompanyGetter()
+var newsGetter = new NewsGetter()
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
@@ -26,10 +28,13 @@ app.post('/company', (req,res) => {
   tickerGetter.getTicker(company
   ).then(ticker => companyGetter.getCompany(ticker)
   ).catch((err) => console.log(err))
-  .then(company => {
-    res.render('index.ejs', { data: JSON.stringify(company) })
+  .then(companyData => newsGetter.getNews(companyData)
+  ).catch((err) => console.log(err))
+  .then(companyData => {
+    companyData["name"] = req.body.content
+    res.render('index.ejs', { data: JSON.stringify(companyData) })
   })
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err))
 });
 
 module.exports = app;

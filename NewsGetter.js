@@ -5,11 +5,11 @@ function NewsGetter() {
 
 }
 
-NewsGetter.prototype.getNews = function(uri) {
+NewsGetter.prototype.getNews = function(company) {
   return new Promise(function(resolve, reject) {
     options = {
-      'host': url.parse(uri).host,
-      'path': url.parse(uri).pathname,
+      'host': url.parse(company.storyFeedUrl).host,
+      'path': url.parse(company.storyFeedUrl).pathname,
       'port': 80
     };
     var json = ''
@@ -19,7 +19,8 @@ NewsGetter.prototype.getNews = function(uri) {
         json += chunk;
       });
       resp.on('end', function() {
-        resolve(JSON.parse(json));
+        company["news"] = JSON.parse(json)
+        resolve(company);
       });
     }).on("error", function(err) {
         reject(`Got error: ${err.message}`);
