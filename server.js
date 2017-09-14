@@ -4,10 +4,12 @@ const bodyParser = require('body-parser')
 const TickerGetter = require('./TickerGetter')
 const CompanyGetter = require('./CompanyGetter')
 const NewsGetter = require('./NewsGetter')
+const SentimentAnalyser = require('./SentimentAnalyser')
 
 var tickerGetter = new TickerGetter()
 var companyGetter = new CompanyGetter()
 var newsGetter = new NewsGetter()
+var sentimentAnalyser = new SentimentAnalyser()
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
@@ -31,8 +33,12 @@ app.post('/company', (req,res) => {
   .then(companyData => newsGetter.getNews(companyData)
   ).catch((err) => console.log(err))
   .then(companyData => {
+    companyData.news.forEach(function(newsItem, i) {
+        companyData.news[i]['sentiment'] = sentimentAnalyser.analyse(newsItem.body)
+        })
+    console.log(companyData)
     res.render('index.ejs', { data: JSON.stringify(companyData) })
-  })
+    })
   .catch((err) => console.log(err))
 });
 
