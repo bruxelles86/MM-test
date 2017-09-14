@@ -11,10 +11,11 @@ TickerGetter.prototype.getTicker = function(inputName) {
   return new Promise(function(resolve, reject) {
     _this._dbConnect(uri)
     .then(db => _this._extractTicker(db, inputName))
-    .catch((err) => console.log(err))
+    .catch((err) => reject(err))
     .then(function(tickerCode) {
       resolve(tickerCode)
     })
+    .catch((err) => reject(err))
   })
 }
 
@@ -32,12 +33,16 @@ TickerGetter.prototype._dbConnect = function(uri) {
 
 TickerGetter.prototype._extractTicker = function(db, inputName) {
   return new Promise(function(resolve, reject) {
-    db.collection('company').find().toArray(function(err, companies) {
-      company = companies.find(function(company) {
-        return company.name.toLowerCase().includes(inputName.toLowerCase())
-      })
-      resolve(company.tickerCode)
-      db.close()
+    db.collection('company').find().toArray((err, companies) => {
+      if (err) {
+        reject(err)
+      } else {
+        company = companies.find(function(company) {
+          return company.name.toLowerCase().includes(inputName.toLowerCase())
+        })
+        resolve(company.tickerCode)
+        db.close()
+      }
     })
   })
 }
