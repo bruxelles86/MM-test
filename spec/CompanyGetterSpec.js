@@ -13,6 +13,7 @@ describe('CompanyGetter', function() {
       expect(company.storyFeedUrl).toEqual("http://mm-recruitment-story-feed-api.herokuapp.com/8271")
       done()
     })
+    .catch((err) => console.log(err))
   }, 2500);
 
   it('returns data for Microsoft when passed its ticker', function(done) {
@@ -22,5 +23,6 @@ describe('CompanyGetter', function() {
       expect(company.storyFeedUrl).toEqual("http://mm-recruitment-story-feed-api.herokuapp.com/4934")
       done()
     })
+    .catch((err) => console.log(err))
   }, 2500);
 });
