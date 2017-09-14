@@ -20,9 +20,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/company', (req,res) => {
-
   var company = req.body.content;
   var res = res
+  
   tickerGetter.getTicker(company
   ).then(ticker => companyGetter.getCompany(ticker)
   ).catch((err) => console.log(err))
