@@ -76,8 +76,8 @@ var assert = require("chai").assert,
         browser.visit(uri, () => {
           browser.fill('content', 'google');
           browser.pressButton('Search').then(() => {
-          browser.assert.element('[class="neutral_smiley"]')
-          browser.assert.element('[class="sad_smiley"]')
+          browser.assert.element('[id="neutral_smiley"]')
+          browser.assert.element('[id="sad_smiley"]')
         })
         .catch((err) => console.log(err))
         .then(done, done);

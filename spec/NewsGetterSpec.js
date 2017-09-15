@@ -17,7 +17,7 @@ describe('NewsGetter', () => {
       done()
     })
     .catch((err) => console.log(err))
-  }, 2500);
+  }, 5000);
 
   it('gets story data for Microsoft', done => {
     var headline1 = "Cloud gives Microsoft significant boost"
@@ -29,5 +29,5 @@ describe('NewsGetter', () => {
       done()
     })
     .catch((err) => console.log(err))
-  }, 2500);
+  }, 5000);
 });

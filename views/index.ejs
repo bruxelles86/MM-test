@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="/css/main.css" rel="stylesheet" type="text/css">
 
 <html>
 <head>
@@ -22,15 +23,16 @@
       <% for(i = 0; i != 2; i++) { %>
         <div class="w3-row">
           <div class="w3-col s10 w3-green w3-center">
-            <p id=<%="story" + (i+1) %> > <%= data.news[i].body %></p>
+            <h3 id=<%="story" + (i+1) %> class="news_headline"> <%= data.news[i].headline %></h3>
+            <p id=<%="story" + (i+1) %> class="news_text"> <%= data.news[i].body %></p>
           </div>
           <div class="w3-col s2 w3-white w3-center">
             <% if(data.news[i].sentiment == 'positive') { %>
-              <img src='/images/happy.png' class='happy_smiley'>
+              <img src='/images/happy.png' id='happy_smiley' class='smiley'>
               <% } else if(data.news[i].sentiment == 'neutral') {%>
-                <img src='/images/neutral.png' class='neutral_smiley'>
+                <img src='/images/neutral.png' id='neutral_smiley' class='smiley'>
                 <% } else if(data.news[i].sentiment == 'negative') {%>
-                  <img src='/images/sad.png' class="sad_smiley">
+                  <img src='/images/sad.png' id="sad_smiley" class='smiley'>
                   <% } %>
                 </div>
               </div>

@@ -1,0 +1,37 @@
+#card {
+  width: 80%;
+  position: relative;
+  top: 50px;
+  left: 20px;
+}
+
+#company_input {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+#ticker_price {
+  position: relative;
+  left: 20px;
+}
+
+.news_text {
+  text-align: left;
+  position: relative;
+  left: 20px;
+  right: 10px;
+  padding-right: 1cm;
+}
+
+.news_headline {
+  text-align: left;
+  position: relative;
+  left: 20px;
+  right: 10px;
+}
+
+.smiley {
+  position: relative;
+  top: 50px;
+}

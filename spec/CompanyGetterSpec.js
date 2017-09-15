@@ -16,7 +16,7 @@ describe('CompanyGetter', () => {
       done()
     })
     .catch((err) => console.log(err))
-  }, 2500);
+  }, 5000);
 
   it('returns data for Microsoft when passed its ticker', done => {
     var company = { 'name' : 'Microsoft Inc', 'tickerCode' : 'MSFT'}
@@ -28,5 +28,5 @@ describe('CompanyGetter', () => {
       done()
     })
     .catch((err) => console.log(err))
-  }, 2500);
+  }, 5000);
 });

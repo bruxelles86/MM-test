@@ -5,7 +5,8 @@ const routes = require('./routes/routes');
 
 app.use('/', routes);
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
+
+app.use(express.static(__dirname + '/public'))
 
 app.listen(3000, () => {
   console.log('listening on port 3000')
