@@ -1,7 +1,7 @@
 Acuris Tech Test - Will Gant
 =================
 
-Simple news app written with Node.js and Express.
+Simple news app written with Node.js and Express, to show stories with adjacent smileys representing their 'sentiment' rating, depending on the prevalence of positive and negative words in the article text.
 
 <img src = "https://user-images.githubusercontent.com/20523607/30482304-bb9d0290-9a22-11e7-94e9-c235683ab258.png">
 
