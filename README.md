@@ -32,7 +32,7 @@ Technologies & Dependencies
 Approach
 ----------
 
-I started out by writing down a list of the different steps that would need to be followed on the back-end following a search by a user for a company. Before long it became clear the first stage would be retrieving a company's ticker from the database, then using that in turn to query a separate API that serves up data for that company as a JSON object. That object would then provide a URI for news stories associated with the company in question. At the end of that process, the app would have collected all the information needed to generate a view for the user.
+I started out by writing down a list of the different steps that would need to be followed on the back-end following a search by a user for a company. Before long it became clear the first stage would be retrieving a company's ticker from the database, then using that in turn to query a separate API that serves up data for that company as a JSON object. That object would then provide a URI for news stories associated with the company in question, which would need to be queried to get the headlines and article text. At the end of that process, the app would have collected all the information needed to generate a view for the user.
 
 I've had plenty of experience with Node.js, but never in the context of building a full-stack app. Because of this, I decided to start by writing the logic for the process described above.
 
