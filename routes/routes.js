@@ -3,7 +3,7 @@ module.exports = (function() {
     const router = require('express').Router();
     const bodyParser = require('body-parser')
 
-    const CompanySearcher = require('../CompanySearcher.js')
+    const CompanySearcher = require('../lib/CompanySearcher.js')
     var companySearcher = new CompanySearcher()
 
     router.use(bodyParser.urlencoded({extended: true}))

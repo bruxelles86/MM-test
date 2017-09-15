@@ -1,4 +1,4 @@
-const CompanyGetter = require('../../CompanyGetter')
+const CompanyGetter = require('../../lib/CompanyGetter')
 
 describe('CompanyGetter', () => {
   var companyGetter

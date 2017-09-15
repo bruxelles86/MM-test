@@ -1,4 +1,4 @@
-const TickerGetter = require('../../TickerGetter')
+const TickerGetter = require('../../lib/TickerGetter')
 
 describe('TickerGetter', function() {
   var tickerGetter
