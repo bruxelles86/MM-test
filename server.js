@@ -14,6 +14,7 @@ var sentimentAnalyser = new SentimentAnalyser()
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json());
+app.use(express.static('public'))
 
 app.listen(3000, () => {
   console.log('listening on port 3000')
@@ -36,7 +37,6 @@ app.post('/company', (req,res) => {
     companyData.news.forEach(function(newsItem, i) {
         companyData.news[i]['sentiment'] = sentimentAnalyser.analyse(newsItem.body)
         })
-    console.log(companyData)
     res.render('index.ejs', { data: JSON.stringify(companyData) })
     })
   .catch((err) => console.log(err))

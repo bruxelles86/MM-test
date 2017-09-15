@@ -12,8 +12,8 @@ TickerGetter.prototype.getTicker = function(inputName) {
     _this._dbConnect(uri)
     .then(db => _this._extractTicker(db, inputName))
     .catch((err) => reject(err))
-    .then(tickerCode => {
-      resolve(tickerCode)
+    .then(company => {
+      resolve(company)
     })
     .catch((err) => reject(err))
   })
