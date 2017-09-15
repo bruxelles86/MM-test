@@ -11,6 +11,7 @@ Installation, Use & Testing
 * Simply fork or clone this repo, and run `npm install`
 * Run `node server.js` in the main directory and navigate to localhost:3000.
 * Enter a company name and hit `Search`
+* The app is also hosted on Heroku at https://serene-chamber-12761.herokuapp.com
 * Front-end and back-end tests can be run together with `npm test`
 
 Note: search is case-insensitive, and works for partial company names (i.e. 'microsoft' works the same as 'Microsoft Inc')
