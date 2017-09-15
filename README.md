@@ -9,3 +9,16 @@ Installation & Testing
 * Simply fork or clone this repo, and run `npm install`
 * Run `node server.js` in the main directory and navigate to localhost:3000
 * Front-end and back-end tests can be run together with `npm test`
+
+Technologies & Dependencies
+-------------
+
+* Node.js
+* MongoDB
+* Express
+* Body-parser
+* EJS
+* Jasmine
+* Mocha
+* Chai
+* Zombie
