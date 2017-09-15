@@ -7,7 +7,8 @@ Installation & Testing
 --------
 
 * Simply fork or clone this repo, and run `npm install`
-* Run `node server.js` in the main directory and navigate to localhost:3000
+* Run `node server.js` in the main directory and navigate to localhost:3000.
+* Enter a company name and hit `Search`
 * Front-end and back-end tests can be run together with `npm test`
 
 Technologies & Dependencies
