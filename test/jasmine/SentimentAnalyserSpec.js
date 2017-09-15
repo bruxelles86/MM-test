@@ -1,4 +1,4 @@
-const SentimentAnalyser = require('../SentimentAnalyser.js')
+const SentimentAnalyser = require('../../SentimentAnalyser.js')
 
 describe('SentimentAnalyser', () => {
   var sentimentAnalyser

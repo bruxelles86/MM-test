@@ -1,6 +1,6 @@
 var assert = require("chai").assert,
     Browser = require("zombie"),
-    app = require("../server");
+    app = require("../../server");
 
     describe("Acuris tech test app", () => {
       var server, browser, uri;

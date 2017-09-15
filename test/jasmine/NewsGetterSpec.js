@@ -1,4 +1,4 @@
-const NewsGetter = require('../NewsGetter')
+const NewsGetter = require('../../NewsGetter')
 
 describe('NewsGetter', () => {
   var newsGetter
