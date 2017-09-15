@@ -1,7 +1,7 @@
 Acuris Tech Test - Will Gant
 =================
 
-<img src = "https://user-images.githubusercontent.com/20523607/30480533-7bbb8348-9a1a-11e7-9beb-cf8b375a17d7.png">
+<img src = "https://user-images.githubusercontent.com/20523607/30482304-bb9d0290-9a22-11e7-94e9-c235683ab258.png">
 
 Installation & Testing
 --------
