@@ -15,7 +15,10 @@ module.exports = (function() {
 
     router.post('/company', (req,res) => {
       var company = req.body.content;
-      companySearcher.search(company, res)
+      companySearcher.search(company).then(json => {
+        res.render('index.ejs', { data: json })
+      }
+    ).catch((err) => console.log(err))
     });
     return router;
 })();
