@@ -3,7 +3,7 @@ Acuris Tech Test - Will Gant
 
 Simple news app written with Node.js and Express, to show stories with adjacent smileys representing their 'sentiment' rating, depending on the prevalence of positive and negative words in the article text.
 
-<img src = "https://user-images.githubusercontent.com/20523607/30482304-bb9d0290-9a22-11e7-94e9-c235683ab258.png">
+<img src = "https://user-images.githubusercontent.com/20523607/30515002-ae62a25c-9b20-11e7-963d-a21fd8efd926.png">
 
 Installation, Use & Testing
 --------
@@ -53,3 +53,5 @@ At this point, I needed to leave my comfort zone and figure out how I would prod
 After appropriating some smiley images, it took me a while to figure out how to get these to line up neatly on the right-hand side of the associated story. In the end, W3 came to my rescue again - this time with 12-column 'responsive fluid grids', which allowed me to divide a div into rows with two sections - one for the stories, the other for the images.
 
 By this stage, the app was mostly doing all that it needed to, and all that remained were some style tweaks and a bit of tidying up. I extracted the routes from server.js to a [separate file](https://github.com/bruxelles86/MM-test/blob/master/routes/routes.js), added an [external stylesheet](https://github.com/bruxelles86/MM-test/blob/master/public/css/main.css) to make the view a little prettier, and consolidated my Jasmine and Mocha tests - until now sitting in separate directories - into the same folder. All the business logic went into a 'lib' directory. Importantly, it was also around this time I decided to create a final object, my [CompanySearcher](https://github.com/bruxelles86/MM-test/blob/master/lib/CompanySearcher.js), into which I extracted all the logic that had previously sat in the /company post route.
+
+The final step was to update the /company POST route, so that any errors caught lead to a stack trace appearing in the view along with a message explaining that the search failed. That way, any searches for companies not present in the database or APIs, or whose data is incomplete, result in some useful information being shown to the user, rather than the client waiting for a response that will never come, or the server simply crashing.
