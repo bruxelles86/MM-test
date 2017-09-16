@@ -18,7 +18,9 @@ module.exports = (function() {
       companySearcher.search(company).then(json => {
         res.render('index.ejs', { data: json })
       }
-    ).catch((err) => console.log(err))
+    ).catch((err) => {
+      res.status(500).json({ error: "Something went wrong: \n" + err.toString() });
+    })
     });
     return router;
 })();
