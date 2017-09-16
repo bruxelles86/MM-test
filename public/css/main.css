@@ -35,3 +35,9 @@
   position: relative;
   top: 50px;
 }
+
+.error {
+  position: relative;
+  left: 20px;
+  right: 10px;
+}

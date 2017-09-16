@@ -19,7 +19,8 @@ module.exports = (function() {
         res.render('index.ejs', { data: json })
       }
     ).catch((err) => {
-      res.status(500).json({ error: "Something went wrong: \n" + err.toString() });
+        console.log(err.stack)
+        res.render('index.ejs', { error: err.stack.toString() });
     })
     });
     return router;

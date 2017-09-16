@@ -39,5 +39,10 @@
               <% } %>
             </div>
             <% } %>
+            <% if(typeof error != 'undefined') { %>
+              <br>
+              <p class="error">Unable to retrieve data matching the company name provided</p>
+              <p class="error">Error details: <%= error %></p>
+            <% } %>
           </body>
           </html>
